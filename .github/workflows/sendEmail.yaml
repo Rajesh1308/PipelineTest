@@ -12,11 +12,10 @@ jobs:
         with:
           server_address: smtp.gmail.com
           server_port: 465
-          username: ${{ secrets.MAIL_USERNAME }}
+          username: ${{ secrets.MAIL_ADDRESS }}
           password: ${{ secrets.MAIL_PASSWORD }}
           subject: GitHub Actions Email Test
-          to: your-recipient@example.com
-          from: "Rajesh from GitHub <${{ secrets.MAIL_USERNAME }}>"
-          content_type: text/plain
+          to: rajesharulprakash@gmail.com
+          from: "Rajesh from GitHub"
           body: |
             This is a test email sent from GitHub Actions.
