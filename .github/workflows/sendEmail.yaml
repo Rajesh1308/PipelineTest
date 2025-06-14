@@ -1,0 +1,25 @@
+name: Send Email via actions
+on: push
+
+jobs:
+  mail:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Print Hello World
+      run: echo "Hello World"
+
+    - name: Send email
+      uses: devellany/send-mailer@v1.0.2
+      with:
+        host: smtp.google.com
+        port: 465
+        account: ${{secrets.ACCOUNT}}
+        password: ${{secrets.MAIL_PASSWORD}}
+        sender: Rajesh from Github
+        from: ${{secrets.MAIL_ADDRESS}}
+        to: rajesharulprakash@gmail.com
+        subject: Alert from Github actions.
+        body: You are receiveing it because we are testing the Actions to Send Email.
+        contentType: text/plain
+        
